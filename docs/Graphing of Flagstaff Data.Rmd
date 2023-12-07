@@ -1,0 +1,30 @@
+---
+title: "Data Analysis"
+author: "Analea Poppen"
+date: "2023-12-05"
+output: html_document
+---
+
+```{r}
+library(PoppenChapter16)
+library(ggplot2)
+```
+
+## Question 1
+
+Create a new directory in your package called docs/. In that directory create a RMarkdown file that loads your package and uses the weather data to make a few graphs of weather phenomena over time.
+
+```{r}
+data("Flagstaff_Weather")
+print(Flagstaff_Weather)
+```
+
+
+```{r}
+ggplot(Flagstaff_Weather, aes(x=DATE, y=SNOW)) +
+  geom_line()
+ggplot(Flagstaff_Weather, aes(x=DATE, y=TMAX)) +
+  geom_point()
+```
+
+
